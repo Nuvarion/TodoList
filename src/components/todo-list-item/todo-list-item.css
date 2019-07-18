@@ -15,7 +15,7 @@ todo-list-item {
 }
 
 .todo-list-item.done .todo-list-item-label {
-    text-decoration: line-throught;
+    text-decoration: line-through;
 }
 
 .todo-list-item.important .todo-list-item-label {
