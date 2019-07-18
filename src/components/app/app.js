@@ -81,7 +81,24 @@ export default class App extends Component {
     };
 
     onToggleImportant = (id) => {
-        console.log('Toggle Important', id);
+        this.setState(({todoData}) => {
+            const idx = todoData.findIndex((el) => el.id === id);
+
+            const oldItem = todoData[idx];
+            const newItem = {
+                ...oldItem, 
+                important: !oldItem.important};
+
+            const newArray = [
+                ...todoData.slice(0, idx),
+                newItem,
+                ...todoData.slice(idx + 1)
+            ];
+         
+            return {
+                todoData: newArray
+            };
+        });
     };
 
     render() {
